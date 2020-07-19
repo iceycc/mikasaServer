@@ -2,13 +2,16 @@ pipeline {
     agent {
         docker {
             image 'node:10-alpine' 
-            args '-p 3000:3000' 
+            args '-p 7001:7001' 
         }
     }
     stages {
-        stage('ha ha') { 
+        stage('001') { 
             steps {
-                sh 'echo 001' 
+                sh 'echo "Hello World"'
+                sh '''
+                    echo "Multiline shell steps works too"
+                '''
             }
         }
         stage('Build') { 
