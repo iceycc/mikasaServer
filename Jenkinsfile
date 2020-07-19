@@ -6,6 +6,11 @@ pipeline {
         }
     }
     stages {
+        stage('ha ha') { 
+            steps {
+                sh 'echo 001' 
+            }
+        }
         stage('Build') { 
             steps {
                 sh 'npm install' 
